@@ -31,7 +31,7 @@
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-800">
   <!-- Header -->
-  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
+  <header class="sticky top-0 z-[1000] backdrop-blur bg-white/70 border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
       <div class="flex items-start gap-3 min-w-0">
@@ -164,7 +164,7 @@
   </main>
 
   <!-- Modal Tambah Laporan -->
-  <div id="modal" class="fixed inset-0 z-40 hidden">
+  <div id="modal" class="fixed inset-0 z-[2000] hidden">
     <div class="absolute inset-0 bg-black/30" onclick="closeModal()"></div>
     <div class="relative mx-auto mt-24 w-[92%] max-w-md bg-white rounded-2xl shadow-soft p-4">
       <div class="flex items-center justify-between mb-2">
@@ -193,7 +193,7 @@
   </div>
 
   <!-- Toast -->
-  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden">
+  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[2000] hidden">
     <div class="bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-soft">Tersimpan</div>
   </div>
 
@@ -482,7 +482,14 @@
       const rows = Array.from(document.querySelectorAll('#sensor-tbody tr'));
       rows.forEach(r=> r.classList.remove('ring','ring-amber-300'));
       const idx = sensors.findIndex(s=>s.id===id);
-      if (idx>-1) { const row = rows[idx]; row.scrollIntoView({behavior:'smooth', block:'center'}); row.classList.add('ring','ring-amber-300'); setTimeout(()=>row.classList.remove('ring','ring-amber-300'), 1500); }
+      if (idx>-1) {
+        const row = rows[idx];
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches; // lg breakpoint
+        if (isDesktop) row.scrollIntoView({behavior:'smooth', block:'center'});
+        row.classList.add('ring','ring-amber-300');
+        setTimeout(()=>row.classList.remove('ring','ring-amber-300'), 1500);
+      }
+    }); row.classList.add('ring','ring-amber-300'); setTimeout(()=>row.classList.remove('ring','ring-amber-300'), 1500); }
     }
 
     // ===== Init =====
