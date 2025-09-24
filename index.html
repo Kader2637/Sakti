@@ -32,24 +32,25 @@
 <body class="min-h-screen bg-slate-50 text-slate-800">
   <!-- Header -->
   <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-brand-50 text-brand-600">
-          <!-- simple tree icon -->
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l5 7h-3l4 6h-4l3 5H7l3-5H6l4-6H7l5-7Z"/></svg>
-        </span>
-        <div>
-          <h1 class="text-xl font-semibold">Dashboard Sensor Akar Non‑Invasif</h1>
-          <p class="text-sm text-slate-500">Pemantauan akar & kemiringan batang • Smart Green City</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <button id="toggle-sim" class="px-3 py-2 rounded-xl border text-sm bg-emerald-50 border-emerald-200 text-emerald-700">Simulasi Aktif</button>
-        <button id="open-report" class="px-3 py-2 rounded-xl border text-sm bg-white border-slate-200">+ Laporan</button>
-        <button onclick="location.reload()" class="px-3 py-2 rounded-xl border text-sm bg-white border-slate-200">Muat Ulang</button>
-      </div>
-    </div>
-  </header>
+<div class="max-w-7xl mx-auto px-4 py-3">
+<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+<div class="flex items-start gap-3 min-w-0">
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-brand-50 text-brand-600 flex-shrink-0">
+<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l5 7h-3l4 6h-4l3 5H7l3-5H6l4-6H7l5-7Z"/></svg>
+</span>
+<div class="min-w-0">
+<h1 class="text-lg sm:text-xl font-semibold truncate">Dashboard Sensor Akar Non‑Invasif</h1>
+<p class="text-xs sm:text-sm text-slate-500 truncate">Pemantauan akar & kemiringan batang • Smart Green City</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button id="toggle-sim" class="px-3 py-2 rounded-xl border text-sm bg-emerald-50 border-emerald-200 text-emerald-700">Simulasi Aktif</button>
+<button id="open-report" class="px-3 py-2 rounded-xl border text-sm bg-white border-slate-200">+ Laporan</button>
+<button onclick="location.reload()" class="px-3 py-2 rounded-xl border text-sm bg-white border-slate-200">Muat Ulang</button>
+</div>
+</div>
+</div>
+</header>
 
   <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
     <!-- KPI Cards -->
@@ -478,3 +479,4 @@
   </script>
 </body>
 </html>
+
