@@ -221,8 +221,8 @@ m.classList.toggle('hidden');
       return {
         id: `TREE-${String(i+1).padStart(3,'0')}`,
         species: SPECIES[Math.floor(Math.random()*SPECIES.length)],
-        lat: -6.2 + rand(-0.09, 0.09),
-        lng: 106.82 + rand(-0.13, 0.13),
+        lat: -7.98 + rand(-0.05, 0.05),
+        lng: 112.63 + rand(-0.05, 0.05),
         tiltDeg: Number(tilt.toFixed(1)),
         healthScore: Math.round(health),
         battery: Math.round(Math.max(5, Math.min(100, rand(25, 100)))) ,
@@ -264,7 +264,7 @@ m.classList.toggle('hidden');
     });
 
     // ===== Map =====
-    const map = L.map('map').setView([-6.2, 106.82], 12);
+   const map = L.map('map').setView([-7.98, 112.63], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap kontributor' }).addTo(map);
     const markerLayer = L.layerGroup().addTo(map);
     function renderMarkers(list) {
@@ -496,5 +496,6 @@ m.classList.toggle('hidden');
   </script>
 </body>
 </html>
+
 
 
